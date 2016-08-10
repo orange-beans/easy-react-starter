@@ -1,5 +1,5 @@
 {
-  "name": "React_SPA_boilerPlate",
+  "name": "scalable-react-starter-kit",
   "version": "0.1.1",
   "description": "A basic boilerPlate to build an React SPA Website",
   "repository": "",
@@ -9,7 +9,6 @@
     "css-loader": "^0.23.1",
     "es6-promise": "^3.2.1",
     "express": "^4.14.0",
-    "history": "^1.17.0",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.14.1",
     "morgan": "^1.7.0",
@@ -28,8 +27,7 @@
     "serve-favicon": "^2.3.0",
     "serve-index": "^1.8.0",
     "serve-static": "^1.11.1",
-    "style-loader": "^0.13.1",
-    "utility": "^1.8.0"
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
@@ -46,7 +44,6 @@
     "file-loader": "^0.9.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
-    "mocha": "^3.0.0",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
@@ -56,7 +53,7 @@
     "webpack-sources": "^0.1.2"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "",
     "start": "npm run front-dev | npm run server-dev",
     "server": "cd app/server && node server.js",
     "server-dev": "cd app/server && nodemon server.js",
