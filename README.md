@@ -1,6 +1,6 @@
 # Introduction
-*React-SPA-BoilerPlate*:
-A light-weight skeleton to start your React Web App project with most of the popular tools and libraries included.
+*scalable-react-starter-kit*:
+A react app starter kit with a scalable structure for much easier management and development. 
 
 # Tools / Libraries included (all tools and libraries are properly setup to be easily implemented)
 #### Backend:
