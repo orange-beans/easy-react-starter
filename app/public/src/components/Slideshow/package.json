@@ -1,9 +1,0 @@
-{
-  "name": "Slideshow",
-  "description": "Display info pictures in a slide show",
-  "devOnly": true,
-  "ESVersion": 6,
-  "version": "0.0.1",
-  "private": true,
-  "main": "./index.js"
-}

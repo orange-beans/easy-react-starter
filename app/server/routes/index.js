@@ -1,13 +1,13 @@
-var
-  index,
-  users = require('./users');
+const users = require('./users');
+const games = require('./games');
 
-index = function (req, res) {
+function index(req, res) {
   console.log(res.app.locals);
   console.log(req.cookies);
-};
+}
 
 module.exports = {
-  index : index,
-  users : users,
+  index,
+  users,
+  games,
 };

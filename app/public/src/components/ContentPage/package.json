@@ -1,8 +1,0 @@
-{
-  "name": "ContentPage",
-  "devOnly": true,
-  "ESVersion": 6,
-  "version": "0.0.1",
-  "private": true,
-  "main": "./index.js"
-}

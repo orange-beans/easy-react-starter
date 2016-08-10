@@ -23,13 +23,16 @@ var
 app.set('port', (process.env.PORT || 3001));
 app.use('/', express.static(path.join(__dirname, '../public')));
 app.use(logger('dev'));
-app.use(favicon(path.join(__dirname, '../public/src/static/favicon.ico')));
+app.use(favicon(path.join(__dirname, '../public/static/img/favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // To resolve broswer history url
 app.get('/api/users', routes.users.all);
 app.post('/api/update', routes.users.update);
+
+app.get('/api/games', routes.games.all);
+app.post('/api/games', routes.games.update);
 
 app.get('*', function (req, res){
   res.sendFile(path.resolve(__dirname, '../public', 'index.html'));

@@ -2,16 +2,34 @@
 *React-SPA-BoilerPlate*:
 A light-weight skeleton to start your React Web App project with most of the popular tools and libraries included.
 
-# Tools / Libraries included
+# Tools / Libraries included (all tools and libraries are properly setup to be easily implemented)
+#### Backend:
 * express
+
+#### React:
 * react-router
 * react-css-modules
 * react-slick
+* react-redux
+
+#### Redux:
 * redux
 * redux-thunk
 * redux-logger
 * redux-actions
+* redux-devtools
+
+#### Transform:
+* babel
+
+#### Packaging:
 * webpack
+
+#### Linting:
+* eslint
+
+#### Testing:
+* mocha
 
 # To Install
 #### Clone into a local folder:
