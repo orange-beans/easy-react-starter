@@ -5,9 +5,12 @@ import _ from 'lodash';
 import GameList from './GameList.jsx';
 
 import { NAME } from './constants';
-import * as gameApi from './api';
-import * as actions from './actions';
-const { FetchSucess, ToggleActive } = actions;
+import * as gamesApi from './api';
+
+// Test cross feature state changes
+import users from '../users';
+const usersApi = users.api;
+
 
 class GameListContainer extends Component{
   constructor(props) {
@@ -17,7 +20,7 @@ class GameListContainer extends Component{
   }
 
   componentDidMount() {
-    gameApi.fetchGames(this.props.onFetchSuccess);
+    this.props.fetchGames();
   }
 
   // Note that the key prop is nessesary to minimize DOM change
@@ -27,7 +30,7 @@ class GameListContainer extends Component{
     //this.updateGames();
     console.log('rendering');
     return (
-      <GameList games={this.props.games} onToggleActive={this.props.onToggleActive}></GameList>
+      <GameList games={this.props.games} onToggleActive={this.props.toggleActive}></GameList>
     );
   }
 }
@@ -41,8 +44,12 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onFetchSuccess: (games) => dispatch(FetchSucess(games)),
-    onToggleActive: (id) => dispatch(ToggleActive(id)),
+    fetchGames : () => dispatch(gamesApi.fetchGames()),
+    toggleActive: (id) => {
+      dispatch(gamesApi.toggleActive(id));
+      // Test cross feature api
+      dispatch(usersApi.toggleActive(id));
+    },
   };
 };
 

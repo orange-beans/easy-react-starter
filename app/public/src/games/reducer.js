@@ -3,30 +3,48 @@ import _ from 'lodash';
 
 // Actioins
 import * as actions from './actions';
-const { FETCH_SUCCESS, TOGGLE_ACTIVE } = actions;
+const {
+  TOGGLE_ACTIVE,
+
+  REQUEST_GAMES ,
+  REQUEST_GAMES_SUCCESS,
+  REQUEST_GAMES_ERROR,
+} = actions;
 
 // local helpers
-const initialGameState = {
+const initialUserState = {
+  isFetching: false,
   games: [],
 };
 
 // Using update addons
-function gameReducer(state = initialGameState, action) {
+function userReducer(state = initialUserState, action) {
   const { type, payload } = action;
   switch(type) {
-    case FETCH_SUCCESS:
+    case REQUEST_GAMES:
       return update(state, {
+        isFetching: { $set: true },
+      });
+
+    case REQUEST_GAMES_SUCCESS:
+      return update(state, {
+        isFetching: { $set: false },
         games: { $set: payload.games },
       });
 
+    case REQUEST_GAMES_ERROR:
+      return update(state, {
+        isFetching: { $set: false },
+      });
+
     case TOGGLE_ACTIVE: {
-      let newGames = state.games.map((game, index) => {
-        if (game.id === payload.id) {
-          return update(game, {
-            active: { $set: !game.active },
+      let newGames = state.games.map((user, index) => {
+        if (user.id === payload.id) {
+          return update(user, {
+            active: { $set: !user.active },
           });
         }
-        return game;
+        return user;
       });
 
       return update(state, {
@@ -39,4 +57,4 @@ function gameReducer(state = initialGameState, action) {
   }
 }
 
-export default gameReducer;
+export default userReducer;

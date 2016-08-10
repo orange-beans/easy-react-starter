@@ -12,6 +12,7 @@ import { UserListContainer } from './users';
 import { GameListContainer } from './games';
 
 const store = configureStore(window.devToolsExtension && window.devToolsExtension());
+//const store = configureStore();
 
 class App extends Component {
   render() {
