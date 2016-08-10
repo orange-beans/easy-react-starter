@@ -4,6 +4,17 @@
   "description": "A basic boilerPlate to build an React SPA Website",
   "repository": "",
   "main": "index.js",
+  "keywords": [
+     "javascript",
+     "web",
+     "native",
+     "react",
+     "redux",
+     "react-router",
+     "starter-kit",
+     "webpack"
+   ],
+
   "dependencies": {
     "body-parser": "^1.15.2",
     "css-loader": "^0.23.1",
