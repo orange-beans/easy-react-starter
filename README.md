@@ -1,6 +1,6 @@
 # Introduction
 *scalable-react-starter-kit*:
-A react app starter kit with a scalable structure for much easier management and development. 
+A react app starter kit with a scalable structure for much easier management and development.
 
 # Tools / Libraries included (all tools and libraries are properly setup to be easily implemented)
 #### Backend:
@@ -28,8 +28,6 @@ A react app starter kit with a scalable structure for much easier management and
 #### Linting:
 * eslint
 
-#### Testing:
-* mocha
 
 # To Install
 #### Clone into a local folder:
