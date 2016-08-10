@@ -7,7 +7,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home-page">
-        <h1>React SPA boilerPlate</h1>
+        <h1>Hello React SPA boilerPlate</h1>
         <p>
           see the following
           <a href="https://github.com/orange-beans/React-SPA-boilerplate"> git </a>

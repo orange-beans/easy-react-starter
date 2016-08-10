@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import store from './store';
+import configureStore from './configureStore';
 // Overall Page Layout Components
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
@@ -11,8 +11,7 @@ import { SearchLayout } from './search';
 import { UserListContainer } from './users';
 import { GameListContainer } from './games';
 
-// const store = configureStore(window.devToolsExtension && window.devToolsExtension());
-
+const store = configureStore(window.devToolsExtension && window.devToolsExtension());
 
 class App extends Component {
   render() {

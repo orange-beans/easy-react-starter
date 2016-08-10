@@ -5,9 +5,7 @@ import _ from 'lodash';
 import UserList from './UserList.jsx';
 
 import { NAME } from './constants';
-import * as userApi from './api';
-import * as actions from './actions';
-const { FetchSucess, ToggleActive } = actions;
+import * as usersApi from './api';
 
 class UserListContainer extends Component{
   constructor(props) {
@@ -16,12 +14,12 @@ class UserListContainer extends Component{
   }
 
   componentDidMount() {
-    userApi.fetchUsers(this.props.FetchSucess);
+    this.props.fetchUsers();
   }
 
   // Note to use nextProps instead of this.props
   componentWillUpdate(nextProps) {
-    userApi.updateUsers(nextProps.users);
+    this.props.updateUsers(nextProps.users);
   }
 
   // Note that the key prop is nessesary to minimize DOM change
@@ -31,7 +29,7 @@ class UserListContainer extends Component{
     //this.updateUsers();
     console.log('rendering');
     return (
-      <UserList users={this.props.users} onToggleActive={this.props.ToggleActive}></UserList>
+      <UserList users={this.props.users} onToggleActive={this.props.toggleActive}></UserList>
     );
   }
 }
@@ -45,8 +43,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    FetchSucess: (users) => dispatch(FetchSucess(users)),
-    ToggleActive: (user_id) => dispatch(ToggleActive(user_id)),
+    fetchUsers : () => dispatch(usersApi.fetchUsers()),
+    toggleActive: (user_id) => dispatch(usersApi.toggleActive(user_id)),
+    updateUsers: (users) => dispatch(usersApi.updateUsers(users)),
   };
 };
 

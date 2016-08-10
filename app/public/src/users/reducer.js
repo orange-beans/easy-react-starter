@@ -3,10 +3,17 @@ import _ from 'lodash';
 
 // Actioins
 import * as actions from './actions';
-const { USER_FETCH_SUCCESS, TOGGLE_ACTIVE } = actions;
+const {
+  TOGGLE_ACTIVE,
+
+  REQUEST_USERS ,
+  REQUEST_USERS_SUCCESS,
+  REQUEST_USERS_ERROR,
+} = actions;
 
 // local helpers
 const initialUserState = {
+  isFetching: false,
   users: [],
 };
 
@@ -14,9 +21,20 @@ const initialUserState = {
 function userReducer(state = initialUserState, action) {
   const { type, payload } = action;
   switch(type) {
-    case USER_FETCH_SUCCESS:
+    case REQUEST_USERS:
       return update(state, {
+        isFetching: { $set: true },
+      });
+
+    case REQUEST_USERS_SUCCESS:
+      return update(state, {
+        isFetching: { $set: false },
         users: { $set: payload.users },
+      });
+
+    case REQUEST_USERS_ERROR:
+      return update(state, {
+        isFetching: { $set: false },
       });
 
     case TOGGLE_ACTIVE: {
@@ -38,28 +56,5 @@ function userReducer(state = initialUserState, action) {
       return state;
   }
 }
-
-
-// function userReducer(state = initialUserState, action) {
-//   const { type, payload } = action;
-//   switch(type) {
-//     case 'users/USER_FETCH_SUCCESS':
-//       return {...state, users: payload.users};
-//
-//     case 'users/TOGGLE_ACTIVE':
-//       // FIXME: won't work, this is mutation!
-//       //let newState = Object.assign({}, state);
-//
-//       // work-around: use JP and JS to deep copy the object
-//       let newState = JSON.parse(JSON.stringify(state));
-//       // Try to copy the array
-//       let newUsers = newState.users;
-//       let user = _.find(newUsers, {id: payload.user_id});
-//       user.active = !user.active;
-//       return {...state, users: newUsers};
-//     default:
-//       return state;
-//   }
-// }
 
 export default userReducer;
