@@ -1,8 +1,8 @@
-# Introduction
-*scalable-react-starter-kit*:
+## Introduction
+*easy-react-starter*:
 A react app starter kit with a scalable structure for much easier management and development.
 
-# Tools / Libraries included (all tools and libraries are properly setup to be easily implemented)
+## Tools / Libraries included (all tools and libraries are properly setup to be easily implemented)
 #### Backend:
 * express
 
@@ -29,7 +29,7 @@ A react app starter kit with a scalable structure for much easier management and
 * eslint
 
 
-# To Install
+## To Install
 #### Clone into a local folder:
 ```bash
 $ git clone https://github.com/orange-beans/React-SPA-boilerplate.git
@@ -39,7 +39,7 @@ $ git clone https://github.com/orange-beans/React-SPA-boilerplate.git
 $ npm install
 ```
 
-# To Use
+## To Use
 #### Run the server and front-end development
 ```bash
 $ npm run start
@@ -58,5 +58,5 @@ $ npm run front-dev
 #### Access your App
 Open your browser, and go to *localhost:3001*.
 
-# Things to note
+## Things to note
 Make sure you run *front-dev* at least once before you run *server*
