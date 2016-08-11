@@ -1,9 +1,8 @@
 {
   "name": "scalable-react-starter-kit",
-  "version": "0.1.1",
-  "description": "A basic boilerPlate to build an React SPA Website",
-  "repository": "",
-  "main": "index.js",
+	"version": "0.1.0",
+	"author": "orange-beans",
+  "license": "MIT",
   "keywords": [
      "javascript",
      "web",
@@ -14,7 +13,17 @@
      "starter-kit",
      "webpack"
    ],
-
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/orange-beans/easy-react-starter.git"
+  },
+	"scripts": {
+    "test": "",
+    "start": "npm run front-dev | npm run server-dev",
+    "server": "cd app/server && node server.js",
+    "server-dev": "cd app/server && nodemon server.js",
+    "front-dev": "webpack --progress --color --watch --display-error-details"
+  },
   "dependencies": {
     "body-parser": "^1.15.2",
     "css-loader": "^0.23.1",
@@ -62,14 +71,5 @@
     "stylelint": "^7.1.0",
     "webpack": "^1.13.1",
     "webpack-sources": "^0.1.2"
-  },
-  "scripts": {
-    "test": "",
-    "start": "npm run front-dev | npm run server-dev",
-    "server": "cd app/server && node server.js",
-    "server-dev": "cd app/server && nodemon server.js",
-    "front-dev": "webpack --progress --color --watch --display-error-details"
-  },
-  "author": "orange-Beans",
-  "license": "MIT"
+  }
 }
